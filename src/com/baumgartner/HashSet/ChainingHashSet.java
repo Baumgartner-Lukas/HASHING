@@ -5,9 +5,10 @@ import com.baumgartner.Interfaces.MyHashSet;
 public class ChainingHashSet implements MyHashSet {
     private ChainingHashNode[] elements;
     private int size;
+    private static int SET_SIZE = 10;
 
     public ChainingHashSet() {
-        elements = new ChainingHashSet.ChainingHashNode[10];
+        elements = new ChainingHashSet.ChainingHashNode[SET_SIZE];
         size = 0;
     }
 
@@ -48,13 +49,18 @@ public class ChainingHashSet implements MyHashSet {
     @Override
     public boolean contains(Integer key) throws IllegalArgumentException {
         if (key == null) throw new IllegalArgumentException("Key must not be null");
-        for (ChainingHashNode n : elements) {
-            while (n != null) {
-                if (key.compareTo(n.key) == 0) {
-                    return true;
-                }
-                n = n.next;
-            }
+//        for (ChainingHashNode n : elements) {
+//            while (n != null) {
+//                if (key.compareTo(n.key) == 0) {
+//                    return true;
+//                }
+//                n = n.next;
+//            }
+//        }
+        ChainingHashNode node = elements[hashCode(key)];
+        while(node != null){
+            if(node.key.equals(key))return true;
+            node = node.next;
         }
         return false;
     }
@@ -111,7 +117,7 @@ public class ChainingHashSet implements MyHashSet {
      * @param key key element of key-value pair. Hashvalue
      * @return returns hashvalue for key
      */
-    public int hashCode(int key) {
+    private int hashCode(int key) {
         return (key % elements.length);
     }
 

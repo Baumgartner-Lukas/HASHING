@@ -59,7 +59,7 @@ public class LinearHashSet implements MyHashSet {
     public boolean contains(Integer key) throws IllegalArgumentException {
         if (key == null) throw new IllegalArgumentException("Key must not be null");
         for (OpenHashNode n : elements) {
-            if (n != null && key.compareTo(n.key) == 0) {
+            if (n != null && key.compareTo(n.key) == 0 && !n.removed) {
                 return true;
             }
         }
