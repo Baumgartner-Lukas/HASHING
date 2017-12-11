@@ -8,10 +8,11 @@ public class Main {
         ChainingHashSet set = new ChainingHashSet();
 
         set.insert(1,"1");
-        set.insert(4,"1");
-        set.insert(15, "3");
+        set.insert(4,"4");
+        set.insert(15, "15");
+        set.insert(11, "11");
 
-        set.toString();
+        System.out.println(set.toString());
 
     }
 }
