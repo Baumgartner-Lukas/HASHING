@@ -26,18 +26,18 @@ public class Main {
 
         System.out.println(set.toString());
 
-//        linearHashSet.insert(4, "4");
-//        linearHashSet.insert(14, "14");
-//        linearHashSet.insert(24, "24");
-//        linearHashSet.insert(34, "34");
-//        linearHashSet.insert(44, "44");
-//        linearHashSet.insert(54, "54");
-//
-//        System.out.println(linearHashSet.toString());
-//
-//        linearHashSet.remove(44);
-//
-//        System.out.println(linearHashSet.toString());
+        linearHashSet.insert(4, "4");
+        linearHashSet.insert(14, "14");
+        linearHashSet.insert(24, "24");
+        linearHashSet.insert(34, "34");
+        linearHashSet.insert(44, "44");
+        linearHashSet.insert(54, "54");
+
+        System.out.println(linearHashSet.toString());
+
+        linearHashSet.remove(44);
+
+        System.out.println(linearHashSet.toString());
 
 
 
